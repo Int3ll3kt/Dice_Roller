@@ -19,6 +19,17 @@ class MainActivity : AppCompatActivity() {
 
         val countUpButton: Button = findViewById(R.id.count_up_button)
         countUpButton.setOnClickListener { increment() }
+
+        //Get the Button view from the layout and set an onClick listener action
+        val resetButton: Button = findViewById(R.id.reset_button)
+        resetButton.setOnClickListener{reset()}
+    }
+
+    //Click listener action for Reset Button
+    private fun reset() {
+
+        val resultText = findViewById<TextView>((R.id.result_test))
+        resultText.text = "0"
     }
 
     //Click listener action for Roll Button
@@ -35,7 +46,7 @@ class MainActivity : AppCompatActivity() {
         val resultText: TextView = findViewById(R.id.result_test)
 
         //Check if Result TextView is at default, if yes covert to 1
-        if (resultText.text.toString() == "Hello World!"){
+        if (resultText.text.toString() == "Let's Start!"){
             resultText.text = "1"
         }
 
