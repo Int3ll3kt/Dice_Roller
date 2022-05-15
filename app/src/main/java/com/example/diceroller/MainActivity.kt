@@ -3,14 +3,19 @@ package com.example.diceroller
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
+import android.widget.ImageView
 import android.widget.TextView
 //import android.widget.Toast
 
 class MainActivity : AppCompatActivity() {
+
+    private lateinit var diceImage: ImageView
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+        //Initialize diceImage by attaching it to a view
 
+        diceImage = findViewById(R.id.dice_image)
 
         // Get the Button view from the layout and assign a click listener to each
         val rollButton: Button = findViewById(R.id.roll_button)
@@ -35,8 +40,21 @@ class MainActivity : AppCompatActivity() {
     //Click listener action for Roll Button
     private fun rollDice(){
 
+        //Randomly generate a number for each dice roll
         val randomInt: Int = (1..6).random()
-//        Toast.makeText(this, "button clicked", Toast.LENGTH_SHORT).show()
+
+        //Update variable drawableResource with a dice icon equivalent to number generated
+        val drawableResource = when (randomInt){
+            1 -> R.drawable.dice_1
+            2 -> R.drawable.dice_2
+            3 -> R.drawable.dice_3
+            4 -> R.drawable.dice_4
+            5 -> R.drawable.dice_5
+            6 -> R.drawable.dice_6
+            else -> R.drawable.ic_vr_avatar
+        }
+        //Update ImageView with a dice icon equivalent to the random Integer generated.
+        diceImage.setImageResource(drawableResource)
         val resultText: TextView = findViewById(R.id.result_test)
         resultText.text = randomInt.toString()
 

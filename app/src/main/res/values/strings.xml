@@ -2,4 +2,7 @@
     <string name="app_name">Dice Roller</string>
     <string name="roll_label">Roll</string>
     <string name="count_up_label">Count Up</string>
+    <string name="reset_label">Reset</string>
+    <string name="dice_image_desc">dice_image</string>
+    <string name="result_text_default">Let\'s Start!</string>
 </resources>
