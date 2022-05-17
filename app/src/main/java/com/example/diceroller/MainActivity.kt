@@ -23,7 +23,15 @@ class MainActivity : AppCompatActivity() {
         // Get the Button view from the layout and assign a click listener action
         val rollButton: Button = findViewById(R.id.roll_button)
         rollButton.setOnClickListener { rollDice() }
+        //Get the Button view from the layout and assign a click listener action
+        val resetButton: Button = findViewById((R.id.reset_button))
+        resetButton.setOnClickListener { resetDice() }
 
+    }
+
+    private fun resetDice() {
+        diceImage.setImageResource(R.drawable.empty_dice)
+        diceImage2.setImageResource(R.drawable.empty_dice)
     }
 
 
